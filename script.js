@@ -75,6 +75,7 @@ console.log(among3);
 // SORT ==>
 
 console.log(myNumbers.sort());
+console.log(myNumbers.length);
 
 let colours = [
     'white', 'black', 'blue', 'green', 'brown', 'pink', 'Yellow', 'Orange'
@@ -113,5 +114,52 @@ let a = 10;
 let b = ++a;
 console.log(b);
 // console.log(a);
+
+
+// PRIMITIVE AND REFERENCE (NON PRIMITIVE) DATA TYPES OR VALUES
+
+// Primitive value type stores the actual value in a variable
+
+//  EXAMPLE1 ==>
+
+let x = 'hi';
+let y = 2;
+let z = 5;
+
+console.log(x);
+console.log(y);
+console.log(z);
+
+// Reference types stores the reference address of the actual object in the variable
+
+let m = [1, 2, 3];   // Storage address : 0x01
+let n = [5, 4, 6];   // Storage address : 0x02
+let k = m;
+k.push(4);
+m.push(5);
+
+// m = 0x01 = [1, 2, 3]
+// k = m
+
+console.log(`m = ${m}`);
+console.log(`k = ${k}`);
+
+
+// EXAMPLE2 ==>
+
+let p = [1, 2];
+let q = [1, 2];
+
+// Non Primitive is stored in the storage address then the storage address is later stored in the variable
+
+console.log(`p === q ${p === q}`);
+
+console.log(`p = ${p}`);
+add(p, 3)
+console.log(`p = ${p}`);
+
+function add(array, element) {
+    array.push(element)
+}
 
 
