@@ -16,18 +16,22 @@ console.log(length);
 const string = fruit.toString();
 console.log(string);
 
+// Another way to do it
+
+console.log(fruit.toString());
+
 // REPLACE ==>
 
 const replaceEl = (fruit[2] = 'Pineapple');
 console.log(replaceEl);
 console.log(fruit);
 
-// POP ==> Adds a new element to an array (at the end)
+// POP ==> Remove the last element from an array (at the end)
 
 const pop = fruit.pop();
 console.log(fruit);
 
-// PUSH ==> Remove the last item from an array
+// PUSH ==> Adds a new element to an array (at the end)
 
 const push = fruit.push('Mango');
 console.log(fruit);
@@ -107,6 +111,7 @@ console.log(colours);
 const myBoys = ['Linus', 'Mubarak', 'Emmanuel'];
 const myGirls = ['Cecelia', 'Shade'];
 const myPets = ['Cat', 'Dog'];
+// console.log(myBoys.concat(myPets, myGirls));
 const concat = myBoys.concat(myGirls);
 console.log(concat.concat(myPets));
 
@@ -162,8 +167,6 @@ function add(array, element) {
     array.push(element)
 }
 
-// For each
-
 const names = ['Shola', 'Bola', 'Tola'];
 
 // ES(5) FOR LOOP METHOD ==>
@@ -182,14 +185,14 @@ names.forEach(function() {});
 
 names.forEach(() => {} );
 
-names.forEach((value, i, arr) => {
-    console.log(value);
+names.forEach((i, value, arr) => {
+    console.log(i);
 })
 
 let totalValue = 0;
 const trans = [42, 45, 26, 4, 13, 16];
 trans.forEach((trns) => {
-    console.log(totalValue, (totalValue += trns), trns);
+    console.log((totalValue += trns),totalValue, trns);
 } )
 console.log(totalValue);
 
@@ -207,11 +210,17 @@ console.log(sum);
 
 // Filter method
 
-const arrayNumbers = [-20, -40, 43, 30, -1, 23, 34, -50, 44, -75];
+const arrayNumbers = [-20, -40, 43, 30, -1, 23, 34, 4, -50, 44, -75];
+
+// To print negative nubers
 
 const negative = arrayNumbers.filter((number) => number < 0 );
 console.log(negative);
 
+// To print positive numbers
+
+const positiveNumbers = arrayNumbers.filter((myNum) => myNum > 0)
+console.log(positiveNumbers);
 // For loop method
 
 let negNums = []
@@ -221,6 +230,17 @@ for(let i = 0; i < arrayNumbers.length ; i++) {
     }
 }
 console.log(negNums);
+// console.log(arrayNumbers);
+
+
+let posNums = []
+for(let i = 0; i > arrayNumbers.length ; i++) {
+    if(arrayNumbers[i] > 0 ) {
+        negNums.push(arrayNumbers[i])
+    }
+}
+console.log(posNums);
+// console.log(arrayNumbers);
 
 // forEach() method
 
@@ -231,4 +251,12 @@ arrayNumbers.forEach((arrayNumbers) => {
     }
 })
 console.log(negNums1);
+
+let negNums2 = [];
+arrayNumbers.forEach((arrayNumbers) => {
+    if (arrayNumbers > 0) {
+        negNums1.push(arrayNumbers)
+    }
+})
+console.log(negNums2);
 
