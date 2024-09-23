@@ -162,4 +162,73 @@ function add(array, element) {
     array.push(element)
 }
 
+// For each
+
+const names = ['Shola', 'Bola', 'Tola'];
+
+// ES(5) FOR LOOP METHOD ==>
+
+for(let i = 0; i < names.length; i++){
+    console.log(i, names[i]);
+}
+
+for(const name of names) {
+    console.log(name);
+}
+
+// forEach() method
+
+names.forEach(function() {});
+
+names.forEach(() => {} );
+
+names.forEach((value, i, arr) => {
+    console.log(value);
+})
+
+let totalValue = 0;
+const trans = [42, 45, 26, 4, 13, 16];
+trans.forEach((trns) => {
+    console.log(totalValue, (totalValue += trns), trns);
+} )
+console.log(totalValue);
+
+const colors = ['red', 'blue', 'pink', 'green']
+colors.forEach((color) => {
+    console.log(color);
+})
+
+const numbers = [10, 20, 30]
+let sum = 0;
+numbers.forEach((value) => {
+    sum += value
+})
+console.log(sum);
+
+// Filter method
+
+const arrayNumbers = [-20, -40, 43, 30, -1, 23, 34, -50, 44, -75];
+
+const negative = arrayNumbers.filter((number) => number < 0 );
+console.log(negative);
+
+// For loop method
+
+let negNums = []
+for(let i = 0; i < arrayNumbers.length ; i++) {
+    if(arrayNumbers[i] < 0 ) {
+        negNums.push(arrayNumbers[i])
+    }
+}
+console.log(negNums);
+
+// forEach() method
+
+let negNums1 = [];
+arrayNumbers.forEach((arrayNumbers) => {
+    if (arrayNumbers < 0) {
+        negNums1.push(arrayNumbers)
+    }
+})
+console.log(negNums1);
 
