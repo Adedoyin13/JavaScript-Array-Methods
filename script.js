@@ -233,13 +233,14 @@ console.log(negNums);
 // console.log(arrayNumbers);
 
 
-let posNums = []
-for(let i = 0; i > arrayNumbers.length ; i++) {
-    if(arrayNumbers[i] > 0 ) {
-        negNums.push(arrayNumbers[i])
+let posNums = [];
+for (let i = 0; i < arrayNumbers.length; i++) { // Fixed condition
+    if (arrayNumbers[i] > 0) {
+        posNums.push(arrayNumbers[i]);
     }
 }
-console.log(posNums);
+console.log(posNums); // Outputs positive numbers
+
 // console.log(arrayNumbers);
 
 // forEach() method
@@ -255,8 +256,85 @@ console.log(negNums1);
 let negNums2 = [];
 arrayNumbers.forEach((arrayNumbers) => {
     if (arrayNumbers > 0) {
-        negNums1.push(arrayNumbers)
+        negNums2.push(arrayNumbers)
     }
 })
 console.log(negNums2);
+
+const nums = [1, 2, 3, 4]
+
+const number3 = nums.filter((num) => num < 3 )
+console.log(number3);
+
+// Using forEach to print numbers less than 3
+
+nums.forEach(num => {
+    if (num < 3) {
+        console.log(num);
+    }
+});
+
+// (cohort) ==> it is representing individual element in an array
+
+// Map() method cfeates a new array to execute its operations
+
+const numbas = [1, 2, 3, 4, 5, 6];
+const multiplied = numbas.map(num => num * 2);
+console.log(multiplied);
+console.log(numbas);
+
+const words = ['Hello', 'World', 'Really']
+
+const upperCaseWords = words.map(word => word.toUpperCase());
+console.log(upperCaseWords);
+
+const users = [
+    {name: 'Opera', age: 67},
+    {name: 'Muby', age: 100},
+    {name: 'Rodiyat', age: 30},
+    {name: 'OG', age: 25}
+]
+
+const userNames = users.map(user => user.name);
+console.log(userNames);
+
+const oldUsers = users.map(user => ({
+    ...user,                                   //Spread Operator : To spread elements in sn object
+    isOld: user.age >= 67
+}))
+console.log(oldUsers);
+
+// Class Work
+
+const people = [
+    { name: 'Rodiyat', age: 36 },
+    { name: 'Opera', age: 17 },
+    { name: 'Muby', age: 86 },
+    { name: 'Teddy', age: 16 },
+    { name: 'Chapo', age: 40 },
+    { name: 'OG', age: 62 },
+];
+
+const peopleAgeVerification = people.map(person => {
+    let ageGroup;
+
+    if (person.age < 18) {
+        ageGroup = 'Child';
+    } else if (person.age < 50) {
+        ageGroup = 'Adult';
+    } else {
+        ageGroup = 'Old';
+    }
+
+    return {
+        ...person,
+        isSenior: person.age >= 65,
+        ageGroup: ageGroup
+    };
+});
+
+console.log(peopleAgeVerification);
+
+
+
 
